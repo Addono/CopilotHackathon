@@ -4,7 +4,25 @@ const fs = require('fs');
 const escape = require('escape-html');
 
 const server = http.createServer((req, res) => {
-    if (req.url.startsWith('/DaysBetweenDates')) {
+    if (req.url === '/') {
+        const endpoints = [
+            '/get',
+            '/DaysBetweenDates',
+            '/Validatephonenumber',
+            '/ValidateSpanishDNI',
+            '/ReturnColorCode',
+            '/TellMeAJoke',
+            '/MoviesByDirector',
+            '/ParseUrl',
+            '/ListFiles',
+            '/GetFullTextFile',
+            '/GetLineByLinefromtTextFile',
+            '/CalculateMemoryConsumption',
+            '/MakeZipFile',
+            '/RandomEuropeanCountry'
+        ];
+        res.end('Available endpoints:\n' + endpoints.join('\n'));
+    } else if (req.url.startsWith('/DaysBetweenDates')) {
         //calculate days between two dates
 
         //get dates from querystring
