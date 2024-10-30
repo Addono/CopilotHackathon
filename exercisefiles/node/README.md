@@ -163,6 +163,24 @@ Now that we have the new functionality added and tests covering it, lets create 
 
 - Build the image using Copilot and expose the port 3000.
 
+## Docker Setup
+
+To build and run the Docker image for the Node.js server, follow these steps:
+
+1. Build the Docker image:
+
+```bash
+docker build -t nodeserver .
+```
+
+2. Run the Docker container:
+
+```bash
+docker run -d -p 4000:3000 --name nodeserver nodeserver
+```
+
+3. Test the application by accessing `http://localhost:4000` in your browser or using curl commands.
+
 ## Summary
 
 With the previous exercises you have gone through some common activities that developers usually run:
